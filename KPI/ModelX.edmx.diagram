@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="21a23f243fc046adaf22952ab3953ee5" Name="Diagram1">
+        <EntityTypeShape EntityType="ProductionModel1.App_ProductionToday" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductionModel1.App_ProductionTodayLog" Width="1.5" PointX="4.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductionModel1.Emp_AuthorizationTable" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductionModel1.Emp_DivisionTable" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductionModel1.Emp_ManPowerRegistedTable" Width="1.5" PointX="6" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductionModel1.Emp_ManPowersTable" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductionModel1.Emp_MPFunctionTable" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductionModel1.Emp_Roles" Width="1.5" PointX="6.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductionModel1.Emp_SectionTable" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="ProductionModel1.FK_Emp_AuthorizationTable_Emp_ManPowersTable" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductionModel1.FK_Emp_ManPowerRegistedTable_Emp_ManPowersTable" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductionModel1.FK_Emp_ManPowerRegistedTable_Emp_MPFunctionTable" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductionModel1.FK_Emp_ManPowerRegistedTable_Emp_MPFunctionTable1" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ProductionModel1.Account" Width="1.5" PointX="14" PointY="0.875" />
+        <EntityTypeShape EntityType="ProductionModel1.division" Width="1.5" PointX="5.75" PointY="10.75" />
+        <EntityTypeShape EntityType="ProductionModel1.Emp_DecIncNameTable" Width="1.5" PointX="5.75" PointY="13.75" />
+        <EntityTypeShape EntityType="ProductionModel1.Emp_PlantTable" Width="1.5" PointX="14.75" PointY="9.75" />
+        <EntityTypeShape EntityType="ProductionModel1.Emp_SectionMemberTable" Width="1.5" PointX="9.375" PointY="4" />
+        <EntityTypeShape EntityType="ProductionModel1.Emp_UserLoginTable" Width="1.5" PointX="3.375" PointY="14.375" />
+        <EntityTypeShape EntityType="ProductionModel1.Emp_UserLoginTrackingTable" Width="1.5" PointX="3.375" PointY="11.375" />
+        <EntityTypeShape EntityType="ProductionModel1.Exclusion_ItemsTable" Width="1.5" PointX="11.75" PointY="5.625" />
+        <EntityTypeShape EntityType="ProductionModel1.Exclusion_RecordTable" Width="1.5" PointX="14" PointY="5" />
+        <EntityTypeShape EntityType="ProductionModel1.exclusionItem" Width="1.5" PointX="14.75" PointY="12.75" />
+        <EntityTypeShape EntityType="ProductionModel1.exclusionRecord" Width="1.5" PointX="14.75" PointY="15.75" />
+        <EntityTypeShape EntityType="ProductionModel1.GHOee_Raw" Width="1.5" PointX="16.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ProductionModel1.Loss_DetailTable" Width="1.5" PointX="12" PointY="13.75" />
+        <EntityTypeShape EntityType="ProductionModel1.Loss_ItemsTable" Width="1.5" PointX="9.75" PointY="10.625" />
+        <EntityTypeShape EntityType="ProductionModel1.Loss_RecordTable" Width="1.5" PointX="16.75" PointY="4.75" />
+        <EntityTypeShape EntityType="ProductionModel1.Loss_SixGroupTable" Width="1.5" PointX="9.75" PointY="15.25" />
+        <EntityTypeShape EntityType="ProductionModel1.Loss_SixRelatedTable" Width="1.5" PointX="12" PointY="9.875" />
+        <EntityTypeShape EntityType="ProductionModel1.Loss_SummaryTable" Width="1.5" PointX="5.75" PointY="16.75" />
+        <EntityTypeShape EntityType="ProductionModel1.machineFaultCode" Width="1.5" PointX="16.75" PointY="10.75" />
+        <EntityTypeShape EntityType="ProductionModel1.machineList" Width="1.5" PointX="16.75" PointY="13.75" />
+        <EntityTypeShape EntityType="ProductionModel1.manPowerDailyRegister" Width="1.5" PointX="7.75" PointY="17.75" />
+        <EntityTypeShape EntityType="ProductionModel1.manPowerFunction" Width="1.5" PointX="9.75" PointY="17.75" />
+        <EntityTypeShape EntityType="ProductionModel1.manPowerOptionDI" Width="1.5" PointX="11.75" PointY="17.75" />
+        <EntityTypeShape EntityType="ProductionModel1.manPowerRegister" Width="1.5" PointX="16.75" PointY="17.75" />
+        <EntityTypeShape EntityType="ProductionModel1.manPower" Width="1.5" PointX="18.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ProductionModel1.ML_MachineDeviceTable" Width="1.5" PointX="18.75" PointY="3.75" />
+        <EntityTypeShape EntityType="ProductionModel1.ML_NagaraStartTimeTable" Width="1.5" PointX="18.75" PointY="6.75" />
+        <EntityTypeShape EntityType="ProductionModel1.ML_RecordTable" Width="1.5" PointX="18.75" PointY="10.75" />
+        <EntityTypeShape EntityType="ProductionModel1.Oee_CategoryName" Width="1.5" PointX="18.75" PointY="14.75" />
+        <EntityTypeShape EntityType="ProductionModel1.Oee_ItemName" Width="1.5" PointX="18.75" PointY="17.75" />
+        <EntityTypeShape EntityType="ProductionModel1.oeeBottleneck" Width="1.5" PointX="13.75" PointY="19.75" />
+        <EntityTypeShape EntityType="ProductionModel1.oeeHistory" Width="1.5" PointX="20.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ProductionModel1.oeeItem" Width="1.5" PointX="0.75" PointY="20.75" />
+        <EntityTypeShape EntityType="ProductionModel1.oeeMachine" Width="1.5" PointX="2.75" PointY="20.75" />
+        <EntityTypeShape EntityType="ProductionModel1.oeeMachineTime" Width="1.5" PointX="20.75" PointY="4.75" />
+        <EntityTypeShape EntityType="ProductionModel1.oeeProductionLine" Width="1.5" PointX="4.75" PointY="20.75" />
+        <EntityTypeShape EntityType="ProductionModel1.oeeRelatedLoss" Width="1.5" PointX="20.75" PointY="7.75" />
+        <EntityTypeShape EntityType="ProductionModel1.orDeceiveguest" Width="1.5" PointX="9.75" PointY="20.75" />
+        <EntityTypeShape EntityType="ProductionModel1.orHistory" Width="1.5" PointX="20.75" PointY="10.75" />
+        <EntityTypeShape EntityType="ProductionModel1.Pg_Loss" Width="1.5" PointX="20.75" PointY="14.75" />
+        <EntityTypeShape EntityType="ProductionModel1.Pg_MH" Width="1.5" PointX="20.75" PointY="17.75" />
+        <EntityTypeShape EntityType="ProductionModel1.Pg_PostPlan" Width="1.5" PointX="15.75" PointY="21.75" />
+        <EntityTypeShape EntityType="ProductionModel1.PG_Production" Width="1.5" PointX="17.75" PointY="21.75" />
+        <EntityTypeShape EntityType="ProductionModel1.Pg_STDMH" Width="1.5" PointX="19.75" PointY="21.75" />
+        <EntityTypeShape EntityType="ProductionModel1.Prod_CustWorkingDayTable" Width="1.5" PointX="21.75" PointY="21.75" />
+        <EntityTypeShape EntityType="ProductionModel1.Prod_MachineCycleTimeTable" Width="1.5" PointX="22.75" PointY="4.75" />
+        <EntityTypeShape EntityType="ProductionModel1.Prod_MachineFaultCodeTable" Width="1.5" PointX="6.75" PointY="22.75" />
+        <EntityTypeShape EntityType="ProductionModel1.Prod_MachineNameTable" Width="1.5" PointX="22.75" PointY="7.75" />
+        <EntityTypeShape EntityType="ProductionModel1.Prod_NetTimeTable" Width="1.5" PointX="22.75" PointY="11.75" />
+        <EntityTypeShape EntityType="ProductionModel1.Prod_OABoardTable" Width="1.5" PointX="11.75" PointY="22.75" />
+        <EntityTypeShape EntityType="ProductionModel1.Prod_PPASbyPartNumberTable" Width="1.5" PointX="22.75" PointY="14.75" />
+        <EntityTypeShape EntityType="ProductionModel1.Prod_PPASVOTable" Width="1.5" PointX="22.75" PointY="17.75" />
+        <EntityTypeShape EntityType="ProductionModel1.Prod_ProdPlanTable" Width="1.5" PointX="23.75" PointY="20.75" />
+        <EntityTypeShape EntityType="ProductionModel1.Prod_ProductionToday" Width="1.5" PointX="23.75" PointY="23.75" />
+        <EntityTypeShape EntityType="ProductionModel1.Prod_ProgressResultTable" Width="1.5" PointX="24.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ProductionModel1.Prod_RecordTable" Width="1.5" PointX="24.75" PointY="7.75" />
+        <EntityTypeShape EntityType="ProductionModel1.Prod_StdMonthlyTable" Width="1.5" PointX="24.75" PointY="10.75" />
+        <EntityTypeShape EntityType="ProductionModel1.Prod_StdWorkingDayTable" Width="1.5" PointX="13.75" PointY="24.75" />
+        <EntityTypeShape EntityType="ProductionModel1.Prod_StdYearlyTable" Width="1.5" PointX="24.75" PointY="14.75" />
+        <EntityTypeShape EntityType="ProductionModel1.Prod_TimeBreakQueueTable" Width="1.5" PointX="4.75" PointY="25.75" />
+        <EntityTypeShape EntityType="ProductionModel1.Prod_TimeBreakTable" Width="1.5" PointX="10.75" PointY="25.75" />
+        <EntityTypeShape EntityType="ProductionModel1.Prod_TodayWorkTable" Width="1.5" PointX="25.75" PointY="18.75" />
+        <EntityTypeShape EntityType="ProductionModel1.productionPlan" Width="1.5" PointX="19.75" PointY="25.75" />
+        <EntityTypeShape EntityType="ProductionModel1.productionPpa" Width="1.5" PointX="25.75" PointY="21.75" />
+        <EntityTypeShape EntityType="ProductionModel1.productionRecordEnd" Width="1.5" PointX="26.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ProductionModel1.productionRecord" Width="1.5" PointX="26.75" PointY="3.75" />
+        <EntityTypeShape EntityType="ProductionModel1.productionRedFront" Width="1.5" PointX="26.75" PointY="7.75" />
+        <EntityTypeShape EntityType="ProductionModel1.productionTodayApproval" Width="1.5" PointX="26.75" PointY="10.75" />
+        <EntityTypeShape EntityType="ProductionModel1.productionToday" Width="1.5" PointX="26.75" PointY="14.75" />
+        <EntityTypeShape EntityType="ProductionModel1.product" Width="1.5" PointX="21.75" PointY="26.75" />
+        <EntityTypeShape EntityType="ProductionModel1.progressLoss" Width="1.5" PointX="15.75" PointY="27.75" />
+        <EntityTypeShape EntityType="ProductionModel1.progressMH" Width="1.5" PointX="27.75" PointY="18.75" />
+        <EntityTypeShape EntityType="ProductionModel1.progressPostPlan" Width="1.5" PointX="27.75" PointY="22.75" />
+        <EntityTypeShape EntityType="ProductionModel1.progressProduction" Width="1.5" PointX="23.75" PointY="27.75" />
+        <EntityTypeShape EntityType="ProductionModel1.progressSTDMH" Width="1.5" PointX="27.75" PointY="25.75" />
+        <EntityTypeShape EntityType="ProductionModel1.Role" Width="1.5" PointX="11.75" PointY="1.125" />
+        <EntityTypeShape EntityType="ProductionModel1.section" Width="1.5" PointX="28.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ProductionModel1.servicePreparation" Width="1.5" PointX="0.75" PointY="28.75" />
+        <EntityTypeShape EntityType="ProductionModel1.Software_ErrorCodeTable" Width="1.5" PointX="3.375" PointY="17.25" />
+        <EntityTypeShape EntityType="ProductionModel1.Software_Info" Width="1.5" PointX="2.75" PointY="28.75" />
+        <EntityTypeShape EntityType="ProductionModel1.Software_RevisionTable" Width="1.5" PointX="28.75" PointY="3.75" />
+        <EntityTypeShape EntityType="ProductionModel1.Software_ServiceRevision" Width="1.5" PointX="4.75" PointY="28.75" />
+        <EntityTypeShape EntityType="ProductionModel1.standardNetTime" Width="1.5" PointX="28.75" PointY="6.75" />
+        <EntityTypeShape EntityType="ProductionModel1.standardYearly" Width="1.5" PointX="28.75" PointY="9.75" />
+        <EntityTypeShape EntityType="ProductionModel1.sysdiagram" Width="1.5" PointX="12.75" PointY="28.75" />
+        <EntityTypeShape EntityType="ProductionModel1.timeBreak" Width="1.5" PointX="28.75" PointY="13.75" />
+        <EntityTypeShape EntityType="ProductionModel1.timeBreakUsing" Width="1.5" PointX="17.75" PointY="28.75" />
+        <EntityTypeShape EntityType="ProductionModel1.todayWork" Width="1.5" PointX="25.75" PointY="28.75" />
+        <EntityTypeShape EntityType="ProductionModel1.transaction" Width="1.5" PointX="27.75" PointY="28.75" />
+        <EntityTypeShape EntityType="ProductionModel1.userAuthorization" Width="1.5" PointX="6.75" PointY="29.75" />
+        <EntityTypeShape EntityType="ProductionModel1.userLoginHistory" Width="1.5" PointX="8.75" PointY="29.75" />
+        <EntityTypeShape EntityType="ProductionModel1.userLogin" Width="1.5" PointX="29.75" PointY="17.75" />
+        <EntityTypeShape EntityType="ProductionModel1.userRole" Width="1.5" PointX="19.75" PointY="29.75" />
+        <EntityTypeShape EntityType="ProductionModel1.workHoliday" Width="1.5" PointX="29.75" PointY="23.75" />
+        <EntityTypeShape EntityType="ProductionModel1.workingDayCustomer" Width="1.5" PointX="29.75" PointY="26.75" />
+        <EntityTypeShape EntityType="ProductionModel1.workingDayDenso" Width="1.5" PointX="29.75" PointY="29.75" />
+        <EntityTypeShape EntityType="ProductionModel1.XlossItem" Width="1.5" PointX="30.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ProductionModel1.XlossRecord" Width="1.5" PointX="30.75" PointY="3.75" />
+        <EntityTypeShape EntityType="ProductionModel1.xOEE_Line" Width="1.5" PointX="30.75" PointY="9.75" />
+        <EntityTypeShape EntityType="ProductionModel1.xOEE_MC" Width="1.5" PointX="14.75" PointY="30.75" />
+        <EntityTypeShape EntityType="ProductionModel1.xoeeLine" Width="1.5" PointX="30.75" PointY="12.75" />
+        <AssociationConnector Association="ProductionModel1.FK_Account_Role" />
+        <AssociationConnector Association="ProductionModel1.FK_Emp_SectionMemberTable_Emp_ManPowersTable" />
+        <AssociationConnector Association="ProductionModel1.FK_Emp_UserLoginTable_Emp_ManPowersTable" />
+        <AssociationConnector Association="ProductionModel1.FK_Emp_UserLoginTrackingTable_Emp_ManPowersTable" />
+        <AssociationConnector Association="ProductionModel1.FK_Software_ErrorCodeTable_Emp_ManPowersTable" />
+        <AssociationConnector Association="ProductionModel1.FK_Emp_SectionMemberTable_Emp_MPFunctionTable" />
+        <AssociationConnector Association="ProductionModel1.FK_Emp_SectionMemberTable_Emp_MPFunctionTable1" />
+        <AssociationConnector Association="ProductionModel1.FK_Exclusion_RecordTable_Exclusion_RecordTable" />
+        <AssociationConnector Association="ProductionModel1.FK_Loss_DetailTable_Loss_ItemsTable" />
+        <AssociationConnector Association="ProductionModel1.FK_Loss_SixRelatedTable_Loss_SixGroupTable" />
+        <AssociationConnector Association="ProductionModel1.FK_Loss_SixRelatedTable_Loss_SixGroupTable1" />
+        <EntityTypeShape EntityType="ProductionModel1.Prod_DensoWorkingDayTable" Width="1.5" PointX="0.75" PointY="10.75" />
+        <EntityTypeShape EntityType="ProductionModel1.Prod_PPASTable" Width="1.5" PointX="0.75" PointY="13.75" />
+        <EntityTypeShape EntityType="ProductionModel1.productionVolume" Width="1.5" PointX="7.375" PointY="25.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

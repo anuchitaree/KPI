@@ -1,0 +1,1121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DB119846-16B5-49B6-AC91-4F3302C9FAD2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>KPI</RootNamespace>
+    <AssemblyName>KPI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>D:\VSpublish\Publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <UpdateUrl>http://localhost/KPI/</UpdateUrl>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationVersion>0.7.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\KPi\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>KPI.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>187B21DC020B26FC35C7B904D4FE2502B3126D22</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>kpi.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=4.5.3.3, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.5.3.3\lib\net40\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Text.Encodings.Web, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.6.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=6.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.6.0.2\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_ProductionToday.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_ProductionTodayLog.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Class\ChartLegent.cs" />
+    <Compile Include="Class\Charts.cs" />
+    <Compile Include="Class\Converting.cs" />
+    <Compile Include="Class\DataFormat.cs" />
+    <Compile Include="Class\DataGridViewSetup.cs" />
+    <Compile Include="Class\Draws.cs" />
+    <Compile Include="Class\ExportExcel.cs" />
+    <Compile Include="Class\Extensions.cs" />
+    <Compile Include="Class\FileIO.cs" />
+    <Compile Include="Class\GraphOEE.cs" />
+    <Compile Include="Class\InitialComponent.cs" />
+    <Compile Include="Class\InputBox.cs" />
+    <Compile Include="Class\LossAnalysis.cs" />
+    <Compile Include="Class\ManPowerRegister.cs" />
+    <Compile Include="Class\OABorad.cs" />
+    <Compile Include="Class\OADisplay.cs" />
+    <Compile Include="Class\OEE.cs" />
+    <Compile Include="Class\ProductionProgress.cs" />
+    <Compile Include="Class\ProductionToday.cs" />
+    <Compile Include="Class\ProductionVolume.cs" />
+    <Compile Include="Class\RegistDateTime.cs" />
+    <Compile Include="Class\SerialPortSetting.cs" />
+    <Compile Include="Class\Sql.cs" />
+    <Compile Include="Class\SqlClass.cs" />
+    <Compile Include="Class\SqlClassBPK.cs" />
+    <Compile Include="Class\SqlClassSRG.cs" />
+    <Compile Include="Class\SqlClassWGR.cs" />
+    <Compile Include="Class\Stocks.cs" />
+    <Compile Include="Class\TracCycleTime.cs" />
+    <Compile Include="Class\Tracebility.cs" />
+    <Compile Include="DataContain\Name.cs" />
+    <Compile Include="DataContain\LegendPlate.cs" />
+    <Compile Include="division.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Emp_AuthorizationTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Emp_DecIncNameTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Emp_DivisionTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Emp_ManPowerRegistedTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Emp_ManPowersTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Emp_MPFunctionTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Emp_PlantTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Emp_Roles.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Emp_SectionMemberTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Emp_SectionTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Emp_UserLoginTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Emp_UserLoginTrackingTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="exclusionItem.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="exclusionRecord.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Exclusion_ItemsTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Exclusion_RecordTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GHOee_Raw.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InitialForm\AdditionalDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InitialForm\AdditionalDataForm.Designer.cs">
+      <DependentUpon>AdditionalDataForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InitialForm\AddRemoveEmpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InitialForm\AddRemoveEmpForm.Designer.cs">
+      <DependentUpon>AddRemoveEmpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InitialForm\BankForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InitialForm\BankForm.Designer.cs">
+      <DependentUpon>BankForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InitialForm\BreakTimeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InitialForm\BreakTimeForm.Designer.cs">
+      <DependentUpon>BreakTimeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InitialForm\CalendarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InitialForm\CalendarForm.Designer.cs">
+      <DependentUpon>CalendarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InitialForm\ExclusionLossEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InitialForm\ExclusionLossEditForm.Designer.cs">
+      <DependentUpon>ExclusionLossEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InitialForm\InitialRunForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InitialForm\InitialRunForm.Designer.cs">
+      <DependentUpon>InitialRunForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InitialForm\MachineFaultCodeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InitialForm\MachineFaultCodeForm.Designer.cs">
+      <DependentUpon>MachineFaultCodeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InitialForm\MachineTimeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InitialForm\MachineTimeForm.Designer.cs">
+      <DependentUpon>MachineTimeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InitialForm\ProductionPlanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InitialForm\ProductionPlanForm.Designer.cs">
+      <DependentUpon>ProductionPlanForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InitialForm\SectionCodeAssignForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InitialForm\SectionCodeAssignForm.Designer.cs">
+      <DependentUpon>SectionCodeAssignForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InitialForm\STDNetTimeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InitialForm\STDNetTimeForm.Designer.cs">
+      <DependentUpon>STDNetTimeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InitialForm\UserLoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InitialForm\UserLoginForm.Designer.cs">
+      <DependentUpon>UserLoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InitialForm\UserPasswordChangeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InitialForm\UserPasswordChangeForm.Designer.cs">
+      <DependentUpon>UserPasswordChangeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InitialForm\UserRegistrationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InitialForm\UserRegistrationForm.Designer.cs">
+      <DependentUpon>UserRegistrationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KeepClass\DataGridViewMergedTextBoxColumn.cs" />
+    <Compile Include="KeepClass\DataTableClass.cs" />
+    <Compile Include="KeepClass\DayAndWeekClass.cs" />
+    <Compile Include="KeepClass\OeeLossTimeClass.cs" />
+    <Compile Include="Loss_DetailTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Loss_ItemsTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Loss_RecordTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Loss_SixGroupTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Loss_SixRelatedTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Loss_SummaryTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="machineFaultCode.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="machineList.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="manPower.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="manPowerDailyRegister.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="manPowerFunction.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="manPowerOptionDI.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="manPowerRegister.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ML_MachineDeviceTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ML_NagaraStartTimeTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ML_RecordTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AlarmCode.cs" />
+    <Compile Include="Models\EmpManPower.cs" />
+    <Compile Include="Models\EmpMPovertime.cs" />
+    <Compile Include="Models\EmpRole.cs" />
+    <Compile Include="Models\EmpSection.cs" />
+    <Compile Include="Models\OeeLineMonitor.cs" />
+    <Compile Include="Models\OeeMCMonitor.cs" />
+    <Compile Include="Models\OeeObj.cs" />
+    <Compile Include="Models\OeeSubMemory.cs" />
+    <Compile Include="Models\PartnumberQTY.cs" />
+    <Compile Include="Models\PgSTDMH.cs" />
+    <Compile Include="Models\Ppas.cs" />
+    <Compile Include="Models\ProdDensoWorkingDay.cs" />
+    <Compile Include="Models\ProdMachineName.cs" />
+    <Compile Include="Models\ProdRedFront.cs" />
+    <Compile Include="Models\ProdTodayWork.cs" />
+    <Compile Include="Models\ProductionOnShift.cs" />
+    <Compile Include="Models\ProductionVolume.cs" />
+    <Compile Include="Models\ProdWorkToday.cs" />
+    <Compile Include="Models\Progress.cs" />
+    <Compile Include="Models\ProgressLoss.cs" />
+    <Compile Include="Models\ProgressMP.cs" />
+    <Compile Include="Models\SevenLoss.cs" />
+    <Compile Include="Models\SortedLoss.cs" />
+    <Compile Include="Models\TracEmp.cs" />
+    <Compile Include="Models\TracMachine.cs" />
+    <Compile Include="Models\TracMachineLoss.cs" />
+    <Compile Include="Models\TracParameter.cs" />
+    <Compile Include="Models\TracProductionVolume.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\WorkerShift.cs" />
+    <Compile Include="ModelX.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelX.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelX.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelX.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelX.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ModelY.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelY.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelY.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelY.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelY.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelY.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="oeeBottleneck.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oeeHistory.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oeeItem.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oeeMachine.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oeeMachineTime.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oeeProductionLine.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oeeRelatedLoss.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Oee_CategoryName.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Oee_ItemName.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OptionalForm\DatabaseCheckForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OptionalForm\DatabaseCheckForm.Designer.cs">
+      <DependentUpon>DatabaseCheckForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OptionalForm\HVACForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OptionalForm\HVACForm.Designer.cs">
+      <DependentUpon>HVACForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OptionalForm\ProductionCheckForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OptionalForm\ProductionCheckForm.Designer.cs">
+      <DependentUpon>ProductionCheckForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OptionalForm\StockForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OptionalForm\StockForm.Designer.cs">
+      <DependentUpon>StockForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OptionalForm\StockScannerSettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OptionalForm\StockScannerSettingForm.Designer.cs">
+      <DependentUpon>StockScannerSettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OptionalForm\WGRForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OptionalForm\WGRForm.Designer.cs">
+      <DependentUpon>WGRForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="orDeceiveguest.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="orHistory.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Parameter\CommonDefine.cs" />
+    <Compile Include="Parameter\Connection.cs" />
+    <Compile Include="Parameter\Dict.cs" />
+    <Compile Include="Parameter\ListValue.cs" />
+    <Compile Include="Parameter\Memory.cs" />
+    <Compile Include="Parameter\Obj.cs" />
+    <Compile Include="Parameter\Paths.cs" />
+    <Compile Include="Parameter\Software.cs" />
+    <Compile Include="Pg_Loss.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pg_MH.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pg_PostPlan.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PG_Production.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pg_STDMH.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProdForm\DefectInputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdForm\DefectInputForm.Designer.cs">
+      <DependentUpon>DefectInputForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProdForm\ExculsionInputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdForm\ExculsionInputForm.Designer.cs">
+      <DependentUpon>ExculsionInputForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProdForm\ExculsionLossMonitorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdForm\ExculsionLossMonitorForm.Designer.cs">
+      <DependentUpon>ExculsionLossMonitorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProdForm\LossInputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdForm\LossInputForm.Designer.cs">
+      <DependentUpon>LossInputForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProdForm\MachineDownTimeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdForm\MachineDownTimeForm.Designer.cs">
+      <DependentUpon>MachineDownTimeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProdForm\ManPowerRegisterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdForm\ManPowerRegisterForm.Designer.cs">
+      <DependentUpon>ManPowerRegisterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProdForm\ManPowerReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdForm\ManPowerReportForm.Designer.cs">
+      <DependentUpon>ManPowerReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProdForm\OAalertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdForm\OAalertForm.Designer.cs">
+      <DependentUpon>OAalertForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProdForm\OEEForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdForm\OEEForm.Designer.cs">
+      <DependentUpon>OEEForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProdForm\OEEForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdForm\OEEForm2.Designer.cs">
+      <DependentUpon>OEEForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProdForm\OEEnewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdForm\OEEnewForm.Designer.cs">
+      <DependentUpon>OEEnewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProdForm\OEESubIDForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdForm\OEESubIDForm.Designer.cs">
+      <DependentUpon>OEESubIDForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProdForm\PPASRealTimeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdForm\PPASRealTimeForm.Designer.cs">
+      <DependentUpon>PPASRealTimeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProdForm\ProductionActualForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdForm\ProductionActualForm.Designer.cs">
+      <DependentUpon>ProductionActualForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProdForm\ProductionApprovedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdForm\ProductionApprovedForm.Designer.cs">
+      <DependentUpon>ProductionApprovedForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProdForm\ProductionCollectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdForm\ProductionCollectionForm.Designer.cs">
+      <DependentUpon>ProductionCollectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProdForm\ProductionProgressForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdForm\ProductionProgressForm.Designer.cs">
+      <DependentUpon>ProductionProgressForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProdForm\TracebilityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdForm\TracebilityForm.Designer.cs">
+      <DependentUpon>TracebilityForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProdForm\TracebilityNewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdForm\TracebilityNewForm.Designer.cs">
+      <DependentUpon>TracebilityNewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProdForm\TracebilityScannerSettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdForm\TracebilityScannerSettingForm.Designer.cs">
+      <DependentUpon>TracebilityScannerSettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KeepClass\Conv.cs" />
+    <Compile Include="KeepClass\ExcelClass.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="product.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="productionPlan.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="productionPpa.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="productionRecord.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="productionRecordEnd.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="productionRedFront.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="productionToday.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="productionTodayApproval.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="productionVolume.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Prod_CustWorkingDayTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Prod_DensoWorkingDayTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Prod_MachineCycleTimeTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Prod_MachineFaultCodeTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Prod_MachineNameTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Prod_NetTimeTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Prod_OABoardTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Prod_PPASbyPartNumberTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Prod_PPASTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Prod_PPASVOTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Prod_ProdPlanTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Prod_ProductionToday.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Prod_ProgressResultTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Prod_RecordTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Prod_StdMonthlyTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Prod_StdWorkingDayTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Prod_StdYearlyTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Prod_TimeBreakQueueTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Prod_TimeBreakTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Prod_TodayWorkTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="progressLoss.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="progressMH.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="progressPostPlan.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="progressProduction.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="progressSTDMH.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RD_HL_CalibrationTable.cs">
+      <DependentUpon>ModelY.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RD_PackingSlipTable.cs">
+      <DependentUpon>ModelY.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Role.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="section.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="servicePreparation.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Software_ErrorCodeTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Software_Info.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Software_RevisionTable.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Software_ServiceRevision.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="standardNetTime.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="standardYearly.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="timeBreak.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="timeBreakUsing.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="todayWork.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="transaction.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="userAuthorization.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="userLogin.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="userLoginHistory.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="userRole.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="workHoliday.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="workingDayCustomer.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="workingDayDenso.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="XlossItem.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="XlossRecord.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="xoeeLine.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="xOEE_Line.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="xOEE_MC.cs">
+      <DependentUpon>ModelX.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="InitialForm\AdditionalDataForm.resx">
+      <DependentUpon>AdditionalDataForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InitialForm\AddRemoveEmpForm.resx">
+      <DependentUpon>AddRemoveEmpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InitialForm\BreakTimeForm.resx">
+      <DependentUpon>BreakTimeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InitialForm\CalendarForm.resx">
+      <DependentUpon>CalendarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InitialForm\ExclusionLossEditForm.resx">
+      <DependentUpon>ExclusionLossEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InitialForm\InitialRunForm.resx">
+      <DependentUpon>InitialRunForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InitialForm\MachineFaultCodeForm.resx">
+      <DependentUpon>MachineFaultCodeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InitialForm\MachineTimeForm.resx">
+      <DependentUpon>MachineTimeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InitialForm\ProductionPlanForm.resx">
+      <DependentUpon>ProductionPlanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InitialForm\SectionCodeAssignForm.resx">
+      <DependentUpon>SectionCodeAssignForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InitialForm\STDNetTimeForm.resx">
+      <DependentUpon>STDNetTimeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InitialForm\UserLoginForm.resx">
+      <DependentUpon>UserLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InitialForm\UserPasswordChangeForm.resx">
+      <DependentUpon>UserPasswordChangeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InitialForm\UserRegistrationForm.resx">
+      <DependentUpon>UserRegistrationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OptionalForm\DatabaseCheckForm.resx">
+      <DependentUpon>DatabaseCheckForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OptionalForm\HVACForm.resx">
+      <DependentUpon>HVACForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OptionalForm\ProductionCheckForm.resx">
+      <DependentUpon>ProductionCheckForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OptionalForm\StockForm.resx">
+      <DependentUpon>StockForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OptionalForm\StockScannerSettingForm.resx">
+      <DependentUpon>StockScannerSettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OptionalForm\WGRForm.resx">
+      <DependentUpon>WGRForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdForm\DefectInputForm.resx">
+      <DependentUpon>DefectInputForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdForm\ExculsionInputForm.resx">
+      <DependentUpon>ExculsionInputForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdForm\ExculsionLossMonitorForm.resx">
+      <DependentUpon>ExculsionLossMonitorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdForm\LossInputForm.resx">
+      <DependentUpon>LossInputForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdForm\MachineDownTimeForm.resx">
+      <DependentUpon>MachineDownTimeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdForm\ManPowerRegisterForm.resx">
+      <DependentUpon>ManPowerRegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdForm\ManPowerReportForm.resx">
+      <DependentUpon>ManPowerReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdForm\OAalertForm.resx">
+      <DependentUpon>OAalertForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdForm\OEEForm.resx">
+      <DependentUpon>OEEForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdForm\OEEForm2.resx">
+      <DependentUpon>OEEForm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdForm\OEEnewForm.resx">
+      <DependentUpon>OEEnewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdForm\OEESubIDForm.resx">
+      <DependentUpon>OEESubIDForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdForm\PPASRealTimeForm.resx">
+      <DependentUpon>PPASRealTimeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdForm\ProductionActualForm.resx">
+      <DependentUpon>ProductionActualForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdForm\ProductionApprovedForm.resx">
+      <DependentUpon>ProductionApprovedForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdForm\ProductionCollectionForm.resx">
+      <DependentUpon>ProductionCollectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdForm\ProductionProgressForm.resx">
+      <DependentUpon>ProductionProgressForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdForm\TracebilityForm.resx">
+      <DependentUpon>TracebilityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdForm\TracebilityNewForm.resx">
+      <DependentUpon>TracebilityNewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdForm\TracebilityScannerSettingForm.resx">
+      <DependentUpon>TracebilityScannerSettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EntityDeploy Include="ModelX.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelX.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ModelX.edmx.diagram">
+      <DependentUpon>ModelX.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="ModelY.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelY.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ModelY.edmx.diagram">
+      <DependentUpon>ModelY.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Productivty_2_TemporaryKey.pfx" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customer_80px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_profile_80px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eraser_80px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forgot_password_80px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\password_80px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DailyRecord.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lossAnalysis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\visualProductivity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_80px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\registration_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_new_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\import_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="kpi.ico" />
+    <Content Include="ModelX.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelX.edmx</DependentUpon>
+      <LastGenOutput>ModelX.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModelX.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelX.edmx</DependentUpon>
+      <LastGenOutput>ModelX.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModelY.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelY.edmx</DependentUpon>
+      <LastGenOutput>ModelY.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModelY.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelY.edmx</DependentUpon>
+      <LastGenOutput>ModelY.cs</LastGenOutput>
+    </Content>
+    <Content Include="note.txt" />
+    <None Include="Resources\Idling.jpg" />
+    <None Include="Resources\OEE calculation.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Text.Json.6.0.2\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.2\build\System.Text.Json.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Text.Json.6.0.2\build\System.Text.Json.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Text.Json.6.0.2\build\System.Text.Json.targets'))" />
+  </Target>
+</Project>

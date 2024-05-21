@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="WGRModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="RD_HL_CalibrationTable">
+          <Key>
+            <PropertyRef Name="run" />
+          </Key>
+          <Property Name="run" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sectionCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="registDate" Type="date" Nullable="false" />
+          <Property Name="currentDateTime" Type="datetime" Nullable="false" />
+          <Property Name="dayNight" Type="nchar" MaxLength="1" />
+          <Property Name="machineId" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="chamber" Type="smallint" Nullable="false" />
+          <Property Name="firstBG" Type="float" Nullable="false" />
+          <Property Name="secondBG" Type="float" Nullable="false" />
+          <Property Name="firstSG" Type="float" Nullable="false" />
+          <Property Name="secondSG" Type="float" Nullable="false" />
+          <Property Name="judgeSN" Type="float" Nullable="false" />
+          <Property Name="safetyFactor" Type="float" Nullable="false" />
+          <Property Name="NGSetPoint" Type="float" Nullable="false" />
+          <Property Name="calibrationCompleted" Type="nchar" MaxLength="2" Nullable="false" />
+          <Property Name="AckPerson" Type="int" />
+          <Property Name="AckDateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="RD_PackingSlipTable">
+          <Key>
+            <PropertyRef Name="run" />
+          </Key>
+          <Property Name="run" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sectionCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="registDate" Type="date" Nullable="false" />
+          <Property Name="currentDateTime" Type="datetime" Nullable="false" />
+          <Property Name="dayNight" Type="nchar" MaxLength="1" />
+          <Property Name="machineId" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="partNumber" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="maxLeftTop" Type="float" Nullable="false" />
+          <Property Name="minLeftTop" Type="float" Nullable="false" />
+          <Property Name="maxRightTop" Type="float" Nullable="false" />
+          <Property Name="minRightTop" Type="float" Nullable="false" />
+          <Property Name="maxLeftBottom" Type="float" Nullable="false" />
+          <Property Name="minLeftBottom" Type="float" Nullable="false" />
+          <Property Name="maxRightBottom" Type="float" Nullable="false" />
+          <Property Name="minRightBottom" Type="float" Nullable="false" />
+          <Property Name="judgeResult" Type="nchar" MaxLength="2" Nullable="false" />
+          <Property Name="modeResult" Type="smallint" />
+          <Property Name="numberDataTop" Type="int" Nullable="false" />
+          <Property Name="numberDataBottom" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="WGRModelStoreContainer">
+          <EntitySet Name="RD_HL_CalibrationTable" EntityType="Self.RD_HL_CalibrationTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RD_PackingSlipTable" EntityType="Self.RD_PackingSlipTable" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WGRModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="WGREntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="RD_HL_CalibrationTable" EntityType="WGRModel.RD_HL_CalibrationTable" />
+          <EntitySet Name="RD_PackingSlipTable" EntityType="WGRModel.RD_PackingSlipTable" />
+        </EntityContainer>
+        <EntityType Name="RD_HL_CalibrationTable">
+          <Key>
+            <PropertyRef Name="run" />
+          </Key>
+          <Property Name="run" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sectionCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="registDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="currentDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dayNight" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="machineId" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="chamber" Type="Int16" Nullable="false" />
+          <Property Name="firstBG" Type="Double" Nullable="false" />
+          <Property Name="secondBG" Type="Double" Nullable="false" />
+          <Property Name="firstSG" Type="Double" Nullable="false" />
+          <Property Name="secondSG" Type="Double" Nullable="false" />
+          <Property Name="judgeSN" Type="Double" Nullable="false" />
+          <Property Name="safetyFactor" Type="Double" Nullable="false" />
+          <Property Name="NGSetPoint" Type="Double" Nullable="false" />
+          <Property Name="calibrationCompleted" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="true" />
+          <Property Name="AckPerson" Type="Int32" />
+          <Property Name="AckDateTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="RD_PackingSlipTable">
+          <Key>
+            <PropertyRef Name="run" />
+          </Key>
+          <Property Name="run" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sectionCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="registDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="currentDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dayNight" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="machineId" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="partNumber" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="maxLeftTop" Type="Double" Nullable="false" />
+          <Property Name="minLeftTop" Type="Double" Nullable="false" />
+          <Property Name="maxRightTop" Type="Double" Nullable="false" />
+          <Property Name="minRightTop" Type="Double" Nullable="false" />
+          <Property Name="maxLeftBottom" Type="Double" Nullable="false" />
+          <Property Name="minLeftBottom" Type="Double" Nullable="false" />
+          <Property Name="maxRightBottom" Type="Double" Nullable="false" />
+          <Property Name="minRightBottom" Type="Double" Nullable="false" />
+          <Property Name="judgeResult" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="true" />
+          <Property Name="modeResult" Type="Int16" />
+          <Property Name="numberDataTop" Type="Int32" Nullable="false" />
+          <Property Name="numberDataBottom" Type="Int32" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WGRModelStoreContainer" CdmEntityContainer="WGREntities">
+          <EntitySetMapping Name="RD_HL_CalibrationTable">
+            <EntityTypeMapping TypeName="WGRModel.RD_HL_CalibrationTable">
+              <MappingFragment StoreEntitySet="RD_HL_CalibrationTable">
+                <ScalarProperty Name="AckDateTime" ColumnName="AckDateTime" />
+                <ScalarProperty Name="AckPerson" ColumnName="AckPerson" />
+                <ScalarProperty Name="calibrationCompleted" ColumnName="calibrationCompleted" />
+                <ScalarProperty Name="NGSetPoint" ColumnName="NGSetPoint" />
+                <ScalarProperty Name="safetyFactor" ColumnName="safetyFactor" />
+                <ScalarProperty Name="judgeSN" ColumnName="judgeSN" />
+                <ScalarProperty Name="secondSG" ColumnName="secondSG" />
+                <ScalarProperty Name="firstSG" ColumnName="firstSG" />
+                <ScalarProperty Name="secondBG" ColumnName="secondBG" />
+                <ScalarProperty Name="firstBG" ColumnName="firstBG" />
+                <ScalarProperty Name="chamber" ColumnName="chamber" />
+                <ScalarProperty Name="machineId" ColumnName="machineId" />
+                <ScalarProperty Name="dayNight" ColumnName="dayNight" />
+                <ScalarProperty Name="currentDateTime" ColumnName="currentDateTime" />
+                <ScalarProperty Name="registDate" ColumnName="registDate" />
+                <ScalarProperty Name="sectionCode" ColumnName="sectionCode" />
+                <ScalarProperty Name="run" ColumnName="run" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RD_PackingSlipTable">
+            <EntityTypeMapping TypeName="WGRModel.RD_PackingSlipTable">
+              <MappingFragment StoreEntitySet="RD_PackingSlipTable">
+                <ScalarProperty Name="numberDataBottom" ColumnName="numberDataBottom" />
+                <ScalarProperty Name="numberDataTop" ColumnName="numberDataTop" />
+                <ScalarProperty Name="modeResult" ColumnName="modeResult" />
+                <ScalarProperty Name="judgeResult" ColumnName="judgeResult" />
+                <ScalarProperty Name="minRightBottom" ColumnName="minRightBottom" />
+                <ScalarProperty Name="maxRightBottom" ColumnName="maxRightBottom" />
+                <ScalarProperty Name="minLeftBottom" ColumnName="minLeftBottom" />
+                <ScalarProperty Name="maxLeftBottom" ColumnName="maxLeftBottom" />
+                <ScalarProperty Name="minRightTop" ColumnName="minRightTop" />
+                <ScalarProperty Name="maxRightTop" ColumnName="maxRightTop" />
+                <ScalarProperty Name="minLeftTop" ColumnName="minLeftTop" />
+                <ScalarProperty Name="maxLeftTop" ColumnName="maxLeftTop" />
+                <ScalarProperty Name="partNumber" ColumnName="partNumber" />
+                <ScalarProperty Name="machineId" ColumnName="machineId" />
+                <ScalarProperty Name="dayNight" ColumnName="dayNight" />
+                <ScalarProperty Name="currentDateTime" ColumnName="currentDateTime" />
+                <ScalarProperty Name="registDate" ColumnName="registDate" />
+                <ScalarProperty Name="sectionCode" ColumnName="sectionCode" />
+                <ScalarProperty Name="run" ColumnName="run" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

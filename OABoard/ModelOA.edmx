@@ -1,0 +1,379 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ProductionModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Emp_SectionTable">
+          <Key>
+            <PropertyRef Name="sectionCode" />
+          </Key>
+          <Property Name="sectionCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="sectionName" Type="nvarchar" MaxLength="100" />
+          <Property Name="divisionID" Type="nvarchar" MaxLength="10" />
+          <Property Name="plantID" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="OR_log">
+          <Key>
+            <PropertyRef Name="run" />
+          </Key>
+          <Property Name="run" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sectionCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="registDate" Type="date" Nullable="false" />
+          <Property Name="registDateTime" Type="datetime" Nullable="false" />
+          <Property Name="ctAvg" Type="float" Nullable="false" />
+          <Property Name="ctWeight" Type="float" Nullable="false" />
+          <Property Name="orAvg" Type="float" Nullable="false" />
+          <Property Name="orWeight" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Prod_NetTimeTable">
+          <Key>
+            <PropertyRef Name="registYear" />
+            <PropertyRef Name="sectionCode" />
+            <PropertyRef Name="partNumber" />
+          </Key>
+          <Property Name="run" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="registYear" Type="nchar" MaxLength="4" Nullable="false" />
+          <Property Name="sectionCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="partNumber" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="netTime" Type="float" Nullable="false" />
+          <Property Name="CT" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Prod_RecordTable">
+          <Key>
+            <PropertyRef Name="run" />
+          </Key>
+          <Property Name="run" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sectionCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="registDate" Type="date" />
+          <Property Name="registDateTime" Type="datetime" />
+          <Property Name="partNumber" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="registYear" Type="nchar" MaxLength="4" />
+        </EntityType>
+        <EntityType Name="Prod_StdYearlyTable">
+          <Key>
+            <PropertyRef Name="sectionCode" />
+            <PropertyRef Name="registYear" />
+            <PropertyRef Name="registMonth" />
+          </Key>
+          <Property Name="run" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sectionCode" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="registYear" Type="nchar" MaxLength="4" Nullable="false" />
+          <Property Name="registMonth" Type="nchar" MaxLength="2" Nullable="false" />
+          <Property Name="cycleTimeAverage" Type="float" Nullable="false" />
+          <Property Name="standardRatio" Type="float" Nullable="false" />
+          <Property Name="oa" Type="float" Nullable="false" />
+          <Property Name="registDate" Type="date" Nullable="false" />
+          <Property Name="who" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Prod_TimeBreakQueueTable">
+          <Key>
+            <PropertyRef Name="sectionCode" />
+            <PropertyRef Name="registYear" />
+            <PropertyRef Name="registMonth" />
+          </Key>
+          <Property Name="sectionCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="registYear" Type="nchar" MaxLength="4" Nullable="false" />
+          <Property Name="registMonth" Type="nchar" MaxLength="2" Nullable="false" />
+          <Property Name="breakQueue" Type="smallint" />
+          <Property Name="divisionID" Type="nvarchar" MaxLength="10" />
+          <Property Name="plantID" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Prod_TimeBreakTable">
+          <Key>
+            <PropertyRef Name="divisionID" />
+            <PropertyRef Name="plantID" />
+            <PropertyRef Name="breakQueue" />
+            <PropertyRef Name="hourNo" />
+          </Key>
+          <Property Name="divisionID" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="plantID" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="breakQueue" Type="int" Nullable="false" />
+          <Property Name="hourNo" Type="int" Nullable="false" />
+          <Property Name="startTime" Type="datetime" Nullable="false" />
+          <Property Name="stopTime" Type="datetime" Nullable="false" />
+          <Property Name="monitor" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="period" Type="int" Nullable="false" />
+          <Property Name="dayNight" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="startTimeMonitor" Type="datetime" Nullable="false" />
+          <Property Name="stopTimeMonitor" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Prod_TodayWorkTable">
+          <Key>
+            <PropertyRef Name="sectionCode" />
+            <PropertyRef Name="registDate" />
+            <PropertyRef Name="dayNight" />
+          </Key>
+          <Property Name="run" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sectionCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="registDate" Type="date" Nullable="false" />
+          <Property Name="dayNight" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="workHour" Type="int" Nullable="false" />
+          <Property Name="workShift" Type="nchar" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ProductionModelStoreContainer">
+          <EntitySet Name="Emp_SectionTable" EntityType="Self.Emp_SectionTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OR_log" EntityType="Self.OR_log" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Prod_NetTimeTable" EntityType="Self.Prod_NetTimeTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Prod_RecordTable" EntityType="Self.Prod_RecordTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Prod_StdYearlyTable" EntityType="Self.Prod_StdYearlyTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Prod_TimeBreakQueueTable" EntityType="Self.Prod_TimeBreakQueueTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Prod_TimeBreakTable" EntityType="Self.Prod_TimeBreakTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Prod_TodayWorkTable" EntityType="Self.Prod_TodayWorkTable" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ProductionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Prod_NetTimeTable">
+          <Key>
+            <PropertyRef Name="registYear" />
+            <PropertyRef Name="sectionCode" />
+            <PropertyRef Name="partNumber" />
+          </Key>
+          <Property Name="run" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="registYear" Type="String" MaxLength="4" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="sectionCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="partNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="netTime" Type="Double" Nullable="false" />
+          <Property Name="CT" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Prod_RecordTable">
+          <Key>
+            <PropertyRef Name="run" />
+          </Key>
+          <Property Name="run" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sectionCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="registDate" Type="DateTime" Precision="0" />
+          <Property Name="registDateTime" Type="DateTime" Precision="3" />
+          <Property Name="partNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="registYear" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Prod_StdYearlyTable">
+          <Key>
+            <PropertyRef Name="sectionCode" />
+            <PropertyRef Name="registYear" />
+            <PropertyRef Name="registMonth" />
+          </Key>
+          <Property Name="run" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sectionCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="registYear" Type="String" MaxLength="4" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="registMonth" Type="String" MaxLength="2" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="cycleTimeAverage" Type="Double" Nullable="false" />
+          <Property Name="standardRatio" Type="Double" Nullable="false" />
+          <Property Name="oa" Type="Double" Nullable="false" />
+          <Property Name="registDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="who" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Prod_TimeBreakQueueTable">
+          <Key>
+            <PropertyRef Name="sectionCode" />
+            <PropertyRef Name="registYear" />
+            <PropertyRef Name="registMonth" />
+          </Key>
+          <Property Name="sectionCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="registYear" Type="String" MaxLength="4" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="registMonth" Type="String" MaxLength="2" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="breakQueue" Type="Int16" />
+          <Property Name="divisionID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="plantID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Prod_TodayWorkTable">
+          <Key>
+            <PropertyRef Name="sectionCode" />
+            <PropertyRef Name="registDate" />
+            <PropertyRef Name="dayNight" />
+          </Key>
+          <Property Name="run" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sectionCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="registDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="dayNight" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="workHour" Type="Int32" Nullable="false" />
+          <Property Name="workShift" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ProductionEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Prod_NetTimeTable" EntityType="Self.Prod_NetTimeTable" />
+          <EntitySet Name="Prod_RecordTable" EntityType="Self.Prod_RecordTable" />
+          <EntitySet Name="Prod_StdYearlyTable" EntityType="Self.Prod_StdYearlyTable" />
+          <EntitySet Name="Prod_TimeBreakQueueTable" EntityType="Self.Prod_TimeBreakQueueTable" />
+          <EntitySet Name="Prod_TodayWorkTable" EntityType="Self.Prod_TodayWorkTable" />
+          <EntitySet Name="Prod_TimeBreakTable" EntityType="ProductionModel.Prod_TimeBreakTable" />
+          <EntitySet Name="Emp_SectionTable" EntityType="ProductionModel.Emp_SectionTable" />
+          <EntitySet Name="OR_log" EntityType="ProductionModel.OR_log" />
+        </EntityContainer>
+        <EntityType Name="Prod_TimeBreakTable">
+          <Key>
+            <PropertyRef Name="divisionID" />
+            <PropertyRef Name="plantID" />
+            <PropertyRef Name="breakQueue" />
+            <PropertyRef Name="hourNo" />
+          </Key>
+          <Property Name="divisionID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="plantID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="breakQueue" Type="Int32" Nullable="false" />
+          <Property Name="hourNo" Type="Int32" Nullable="false" />
+          <Property Name="startTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="stopTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="monitor" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="period" Type="Int32" Nullable="false" />
+          <Property Name="dayNight" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="startTimeMonitor" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="stopTimeMonitor" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Emp_SectionTable">
+          <Key>
+            <PropertyRef Name="sectionCode" />
+          </Key>
+          <Property Name="sectionCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="sectionName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="divisionID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="plantID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="OR_log">
+          <Key>
+            <PropertyRef Name="run" />
+          </Key>
+          <Property Name="run" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sectionCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="registDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="registDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ctAvg" Type="Double" Nullable="false" />
+          <Property Name="ctWeight" Type="Double" Nullable="false" />
+          <Property Name="orAvg" Type="Double" Nullable="false" />
+          <Property Name="orWeight" Type="Double" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ProductionModelStoreContainer" CdmEntityContainer="ProductionEntities">
+          <EntitySetMapping Name="Prod_NetTimeTable">
+            <EntityTypeMapping TypeName="ProductionModel.Prod_NetTimeTable">
+              <MappingFragment StoreEntitySet="Prod_NetTimeTable">
+                <ScalarProperty Name="run" ColumnName="run" />
+                <ScalarProperty Name="registYear" ColumnName="registYear" />
+                <ScalarProperty Name="sectionCode" ColumnName="sectionCode" />
+                <ScalarProperty Name="partNumber" ColumnName="partNumber" />
+                <ScalarProperty Name="netTime" ColumnName="netTime" />
+                <ScalarProperty Name="CT" ColumnName="CT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Prod_RecordTable">
+            <EntityTypeMapping TypeName="ProductionModel.Prod_RecordTable">
+              <MappingFragment StoreEntitySet="Prod_RecordTable">
+                <ScalarProperty Name="run" ColumnName="run" />
+                <ScalarProperty Name="sectionCode" ColumnName="sectionCode" />
+                <ScalarProperty Name="registDate" ColumnName="registDate" />
+                <ScalarProperty Name="registDateTime" ColumnName="registDateTime" />
+                <ScalarProperty Name="partNumber" ColumnName="partNumber" />
+                <ScalarProperty Name="registYear" ColumnName="registYear" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Prod_StdYearlyTable">
+            <EntityTypeMapping TypeName="ProductionModel.Prod_StdYearlyTable">
+              <MappingFragment StoreEntitySet="Prod_StdYearlyTable">
+                <ScalarProperty Name="run" ColumnName="run" />
+                <ScalarProperty Name="sectionCode" ColumnName="sectionCode" />
+                <ScalarProperty Name="registYear" ColumnName="registYear" />
+                <ScalarProperty Name="registMonth" ColumnName="registMonth" />
+                <ScalarProperty Name="cycleTimeAverage" ColumnName="cycleTimeAverage" />
+                <ScalarProperty Name="standardRatio" ColumnName="standardRatio" />
+                <ScalarProperty Name="oa" ColumnName="oa" />
+                <ScalarProperty Name="registDate" ColumnName="registDate" />
+                <ScalarProperty Name="who" ColumnName="who" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Prod_TimeBreakQueueTable">
+            <EntityTypeMapping TypeName="ProductionModel.Prod_TimeBreakQueueTable">
+              <MappingFragment StoreEntitySet="Prod_TimeBreakQueueTable">
+                <ScalarProperty Name="sectionCode" ColumnName="sectionCode" />
+                <ScalarProperty Name="registYear" ColumnName="registYear" />
+                <ScalarProperty Name="registMonth" ColumnName="registMonth" />
+                <ScalarProperty Name="breakQueue" ColumnName="breakQueue" />
+                <ScalarProperty Name="divisionID" ColumnName="divisionID" />
+                <ScalarProperty Name="plantID" ColumnName="plantID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Prod_TodayWorkTable">
+            <EntityTypeMapping TypeName="ProductionModel.Prod_TodayWorkTable">
+              <MappingFragment StoreEntitySet="Prod_TodayWorkTable">
+                <ScalarProperty Name="run" ColumnName="run" />
+                <ScalarProperty Name="sectionCode" ColumnName="sectionCode" />
+                <ScalarProperty Name="registDate" ColumnName="registDate" />
+                <ScalarProperty Name="dayNight" ColumnName="dayNight" />
+                <ScalarProperty Name="workHour" ColumnName="workHour" />
+                <ScalarProperty Name="workShift" ColumnName="workShift" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Prod_TimeBreakTable">
+            <EntityTypeMapping TypeName="ProductionModel.Prod_TimeBreakTable">
+              <MappingFragment StoreEntitySet="Prod_TimeBreakTable">
+                <ScalarProperty Name="stopTimeMonitor" ColumnName="stopTimeMonitor" />
+                <ScalarProperty Name="startTimeMonitor" ColumnName="startTimeMonitor" />
+                <ScalarProperty Name="dayNight" ColumnName="dayNight" />
+                <ScalarProperty Name="period" ColumnName="period" />
+                <ScalarProperty Name="monitor" ColumnName="monitor" />
+                <ScalarProperty Name="stopTime" ColumnName="stopTime" />
+                <ScalarProperty Name="startTime" ColumnName="startTime" />
+                <ScalarProperty Name="hourNo" ColumnName="hourNo" />
+                <ScalarProperty Name="breakQueue" ColumnName="breakQueue" />
+                <ScalarProperty Name="plantID" ColumnName="plantID" />
+                <ScalarProperty Name="divisionID" ColumnName="divisionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Emp_SectionTable">
+            <EntityTypeMapping TypeName="ProductionModel.Emp_SectionTable">
+              <MappingFragment StoreEntitySet="Emp_SectionTable">
+                <ScalarProperty Name="plantID" ColumnName="plantID" />
+                <ScalarProperty Name="divisionID" ColumnName="divisionID" />
+                <ScalarProperty Name="sectionName" ColumnName="sectionName" />
+                <ScalarProperty Name="sectionCode" ColumnName="sectionCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OR_log">
+            <EntityTypeMapping TypeName="ProductionModel.OR_log">
+              <MappingFragment StoreEntitySet="OR_log">
+                <ScalarProperty Name="orWeight" ColumnName="orWeight" />
+                <ScalarProperty Name="orAvg" ColumnName="orAvg" />
+                <ScalarProperty Name="ctWeight" ColumnName="ctWeight" />
+                <ScalarProperty Name="ctAvg" ColumnName="ctAvg" />
+                <ScalarProperty Name="registDateTime" ColumnName="registDateTime" />
+                <ScalarProperty Name="registDate" ColumnName="registDate" />
+                <ScalarProperty Name="sectionCode" ColumnName="sectionCode" />
+                <ScalarProperty Name="run" ColumnName="run" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
